@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+
+/*
+display: inline-block;
+下線をテキスト幅にあわせる
+*/
+.item-title {
+  font-size: 2.5rem;
+  display: inline-block;
+  border-bottom: solid 6px #e03131;
+  margin-bottom: 70px;
+}
+/*
+「background-attachment: fixed;」で背景を固定する
+※background-attachment: fixed;とbackground-size: cover;
+を同時に使用した場合、iOSでは正しく動作しない
+*/
+.fixed-bg {
+  height: 400px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+/*
+中身のコンテンツ幅を指定するための共通クラス
+*/
+.wrapper {
+  max-width: 1000px;
+  padding: 90px 16px 150px 16px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+/*-------------------------------------------
+ヘッダー
+-------------------------------------------*/
+
+#header {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(img/top.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px 40px;
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+nav li {
+  margin-left: 30px;
+}
+nav li a {
+  color: #333;
+  transition: all  0.3s ease;
+  filter: drop-shadow(1px 1px 2px #121212);/*filterのdrop-shadowでまわりをぼやっとさせる*/
+}
+nav li a:hover {
+  border-bottom: 1px solid #333;
+}
+
+
+/*top画面のタイトル*/
+.site-title {
+padding: 0 16px;
+text-align: center;
+position: absolute;
+top: 45%;
+font-size: 3rem;
+filter: drop-shadow(1px 1px 10px #c0c0c0);
+line-height: 1;
+}
+.site-title_description {
+  padding: 0 16px;
+  position: absolute;
+  top:58%;
+  left: 10%;
+}
+
+/*-------------------------------------------
+About
+-------------------------------------------*/
+#about {
+  margin-top: 20px;
+}
+#about .about-img {
+  background-image: url(img/london.jpg);
+  position: relative;
+}
+.sec-title {
+  width: 100%;
+  padding: 0 56px;
+  color: #fff;
+  /* text-align: center; */
+  font-size: 3rem;
+  filter: drop-shadow(1px 1px 10px #c0c0c0);
+  position: absolute;
+  top: 30%;
+}
+
+/*-------------------------------------------
+My profile
+-------------------------------------------*/
+.my-img img {
+  width: 300px;
+}
+h3 {
+  margin: 20px 0;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+}
+.icon li {
+  margin-left: 20px;
+}
+
+
+
+/*-------------------------------------------
+Works
+-------------------------------------------*/
+
+
+/* .grid {
+  display: grid;
+  gap:26px;
+  grid-template-columns: 1fr 1fr 1fr ;
+} */
+
+.grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  margin-top: 6%;
+  margin-bottom: 50px;
+}
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+footer {
+  text-align: center;
+  background-color: #efefef;
+  padding: 20px;
+}
+
+@media(max-width:599px){
+  nav {
+    display: none;
+  }
+}
