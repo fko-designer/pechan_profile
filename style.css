@@ -1,170 +1,162 @@
 @charset "UTF-8";
 
-html {
-  font-size: 100%;
+/*common*/
+
+*,*::before,*::after {
+  box-sizing: border-box;
 }
-a {
-  text-decoration: none;
+
+body {
+  margin: 0;
+  background-color: blanchedalmond;
 }
 img {
-  max-width: 100%;
-}
-li {
-  list-style: none;
-}
-
-/*
-display: inline-block;
-下線をテキスト幅にあわせる
-*/
-.item-title {
-  font-size: 2.5rem;
-  display: inline-block;
-  border-bottom: solid 6px #e03131;
-  margin-bottom: 70px;
-}
-/*
-「background-attachment: fixed;」で背景を固定する
-※background-attachment: fixed;とbackground-size: cover;
-を同時に使用した場合、iOSでは正しく動作しない
-*/
-.fixed-bg {
-  height: 400px;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-}
-/*
-中身のコンテンツ幅を指定するための共通クラス
-*/
-.wrapper {
-  max-width: 1000px;
-  padding: 90px 16px 150px 16px;
-  margin: 0 auto;
-  text-align: center;
+  vertical-align: bottom;
 }
 
 
-
-/*-------------------------------------------
-ヘッダー
--------------------------------------------*/
-
-#header {
+/*-----------------------------------------------------------------header--------------------*/
+header {
+  background-color: #efefef;
   width: 100%;
-  min-height: 100vh;
-  background-image: url(img/top.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 20px 40px;
-  position: relative;
+  position: fixed;
 }
-
-nav ul {
-  display: flex;
-  justify-content: flex-end;
-}
-nav li {
-  margin-left: 30px;
-}
-nav li a {
-  color: #333;
-  transition: all  0.3s ease;
-  filter: drop-shadow(1px 1px 2px #121212);/*filterのdrop-shadowでまわりをぼやっとさせる*/
-}
-nav li a:hover {
-  border-bottom: 1px solid #333;
-}
-
-
-/*top画面のタイトル*/
-.site-title {
-padding: 0 16px;
-text-align: center;
-position: absolute;
-top: 45%;
-font-size: 3rem;
-filter: drop-shadow(1px 1px 10px #c0c0c0);
-line-height: 1;
-}
-.site-title_description {
-  padding: 0 16px;
-  position: absolute;
-  top:58%;
-  left: 10%;
-}
-
-/*-------------------------------------------
-About
--------------------------------------------*/
-#about {
-  margin-top: 20px;
-}
-#about .about-img {
-  background-image: url(img/london.jpg);
-  position: relative;
-}
-.sec-title {
-  width: 100%;
-  padding: 0 56px;
-  color: #fff;
-  /* text-align: center; */
-  font-size: 3rem;
-  filter: drop-shadow(1px 1px 10px #c0c0c0);
-  position: absolute;
-  top: 30%;
-}
-
-/*-------------------------------------------
-My profile
--------------------------------------------*/
-.my-img img {
-  width: 300px;
-}
-h3 {
-  margin: 20px 0;
-}
-.icon {
+.container {
+  /* max-width:1200px; */
+  /* margin: 0 auto; */
+  padding: 20px 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.icon li {
-  margin-left: 20px;
+.container div+div {
+  margin-left: 80px;
+}
+header h1 {
+  font-weight: normal;
+  font-size: 24px;
+}
+header p {
+  font-size: 14px;
+}
+header ul {
+list-style: none;
+margin: 16px 0 0 0;
+padding: 0;
+display: flex;
+}
+header ul li+li {
+margin-left: 10px;
+}
+header .icon {
+border-radius: 50%;
+transition-property:border-radius;
+transition-duration: 1s;
+}
+header .icon:hover {
+border-radius: 0%;
+}
+.my_intro {
+  width: 300px;
 }
 
 
 
-/*-------------------------------------------
-Works
--------------------------------------------*/
-
-
-/* .grid {
-  display: grid;
-  gap:26px;
-  grid-template-columns: 1fr 1fr 1fr ;
-} */
-
-.grid {
-  display: grid;
-  gap: 26px;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  margin-top: 6%;
-  margin-bottom: 50px;
+/*----------------------------------------------------------main-----------------------------*/
+main  {
+max-width: 1200px;
+margin: 0 auto;
+padding-top: 200px;
 }
 
-/*-------------------------------------------
-footer
--------------------------------------------*/
-footer {
+
+section {
   text-align: center;
+  margin-bottom: 50px;
+  /* width: 1200px; */
+}
+
+.container-2 h1 {
+  font-size: 24px;
+  font-weight: normal;
+  padding: 60px 0;
+  width: 100%;
+  text-align: center;
+  
+}
+
+main h2 {
+  font-weight: normal;
+  font-size: 20px;
+  margin-top: 16px;
+  text-align: center;
+}
+.description {
+  line-height: 1.9;
+  margin: 16px auto 0;
+  width: 400px;
+  text-align: left;
+}
+main section+section {
+  margin-top: 60px;
+}
+
+@keyframes asbm{
+  0%{transform:perspective(250px) rotateY(-10deg) rotateX(15deg);}
+  100%{transform:perspective(250px) rotateY(10deg) rotateX(-15deg);}
+  }
+  @keyframes wlk{
+  0%{left:0px;transform:rotateY(0deg);}
+  50%{left:calc(100% - 150px);transform:rotateY(0deg);}
+  51%{left:calc(100% - 150px);transform:rotateY(180deg);}
+  100%{left:0px;transform:rotateY(180deg);}
+  }
+  .waku0{
+  display:inline-block;
+  position: relative;
+  width: 150px;
+  height: 200px;
+  animation: wlk 20s linear 0s infinite normal;
+  }
+  .waku1{
+  display:inline-block;
+  position:absolute;
+  transform-origin: 0% 50% 0px;
+  animation:asbm 0.8s linear 0s infinite alternate;
+  }
+  .waku1 img {
+    width: 100px;
+  }
+
+/*footer*/
+footer {
+  padding: 60px 0;
+  text-align: center;
+  color:#aaa;
   background-color: #efefef;
-  padding: 20px;
 }
 
 @media(max-width:599px){
-  nav {
-    display: none;
+  header {
+    position: static;
   }
+  .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .container div+div {
+    margin-left: 0;
+  }
+  section img {
+    width: 100%;
+  }
+  .my_intro {
+    margin-top: 10px;
+  }
+  .description {
+    width: 100%;
+    padding: 0 5px;
+  }
+
+
 }
